@@ -1,5 +1,4 @@
 module threexeightdecoder_tb();
-
 reg en;
 reg [2:0] i;
 wire [7:0] y;

@@ -9,10 +9,10 @@ wire [1:0] na;
 wire [1:0] nb;
 wire w1, w2, w3, w4;
 
-not [1:0] nota(na, a);
-not [1:0] notb(nb, b);
+not nota[1:0] (na, a);
+not notb[1:0] (nb, b);
 
-xnor [1:0] e1(x, a, b);
+xnor e1[1:0] (x, a, b);
 and e(a_equal_b, x[1], x[0]);
 
 and g1(w1, a[1], nb[1]);
