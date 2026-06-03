@@ -1,5 +1,4 @@
 module twoxfourdecoder_tb();
-
 reg en;
 reg [1:0] i;
 wire [3:0] y;

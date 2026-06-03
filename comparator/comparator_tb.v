@@ -1,5 +1,4 @@
 module comparator_tb();
-
 reg [1:0] a;
 reg [1:0] b;
 wire a_equal_b, a_greater_b, a_less_b;

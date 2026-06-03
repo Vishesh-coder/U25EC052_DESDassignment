@@ -1,5 +1,4 @@
 module carry_adder_tb();
-
 reg [3:0] a;
 reg [3:0] b;
 reg cin;
