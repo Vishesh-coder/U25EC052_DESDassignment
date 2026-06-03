@@ -20,7 +20,7 @@ fourxtwoencoder enc_upper(
     .v(v_upper)
 );
 
-or g2(y[2], v_upper, 1'b0);
+buf g2(y[2], v_upper);
 or g1(y[1], y_upper[1], y_lower[1]);
 or g0(y[0], y_upper[0], y_lower[0]);
 or valid(v, v_lower, v_upper);
