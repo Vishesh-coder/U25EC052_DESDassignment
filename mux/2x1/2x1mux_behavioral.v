@@ -5,8 +5,10 @@ module twoxone_mux(
 );
 
 always @(*) begin
-    if(s == 1'b0) y = i[0];
-    else y = i[1];
+    case(s)
+        1'b0: y = i[0];
+        1'b1: y = i[1];
+    endcase
 end
 
 endmodule

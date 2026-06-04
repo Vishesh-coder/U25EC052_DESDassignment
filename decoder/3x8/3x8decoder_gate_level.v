@@ -6,7 +6,9 @@ module threexeightdecoder(
 
 wire [2:0] ni;
 
-not n[2:0] (ni, i);
+not n0(ni[0], i[0]);
+not n1(ni[1], i[1]);
+not n2(ni[2], i[2]);
 
 and y0(y[0], ni[2], ni[1], ni[0], en);
 and y1(y[1], ni[2], ni[1], i[0],  en);
