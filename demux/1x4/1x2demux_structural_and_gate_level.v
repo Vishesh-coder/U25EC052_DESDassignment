@@ -3,7 +3,10 @@ module onextwo_demux(
     output [1:0] y
 );
 
-assign y[0] = ~s & i;
-assign y[1] = s & i;
+wire ns;
+
+not n(ns, s);
+and o0(y[0], ns, i);
+and o1(y[1], s, i);
 
 endmodule
