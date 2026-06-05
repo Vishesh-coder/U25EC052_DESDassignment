@@ -6,7 +6,7 @@ module eightxthree_encoder(
 
 task encode;
     input [7:0] inp;
-    output [2:0] out;
+    output reg [2:0] out;
 
     begin
         case (inp)

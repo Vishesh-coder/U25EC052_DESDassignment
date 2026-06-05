@@ -7,7 +7,7 @@ module threexeightdecoder(
 task decode;
     input enable;
     input [2:0] inp;
-    output [7:0] out;
+    output reg [7:0] out;
 
     begin
         if(enable) out = 8'b00000001 << inp;
