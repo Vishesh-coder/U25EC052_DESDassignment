@@ -1,6 +1,6 @@
 module onexn_demux #(
-    parameter select = 3,
-    parameter out = 2 ** select
+    parameter out = 8,
+    parameter select = $clog2(out)
 )(
     input i,
     input [select-1:0] s,

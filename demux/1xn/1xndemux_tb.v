@@ -1,6 +1,6 @@
 module onexn_demux_tb;
-parameter select = 3;
-parameter out = 2 ** select;
+parameter out = 8;
+parameter select = $clog2(out);
 
 reg i;
 reg [select-1:0] s;

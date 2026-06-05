@@ -1,6 +1,6 @@
 module nx1_mux #(
-    parameter select = 3,
-    parameter n = 2 ** select
+    parameter n = 8,
+    parameter select = $clog2(n)
 )(
     input [n-1:0] i,
     input [select-1:0] s,

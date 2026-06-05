@@ -1,6 +1,6 @@
 module nx1_mux_tb;
-parameter select = 3;
-parameter n = 2 ** select;
+parameter n = 8;
+parameter select = $clog2(n);
 
 reg [n-1:0] i;
 reg [select-1:0] s;
