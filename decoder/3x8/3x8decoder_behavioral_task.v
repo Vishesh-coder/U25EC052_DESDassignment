@@ -10,8 +10,8 @@ task decode;
     output [7:0] out;
 
     begin
-        if(enable) decode = 8'b00000001 << inp;
-        else decode = 8'b00000000; 
+        if(enable) out = 8'b00000001 << inp;
+        else out = 8'b00000000; 
     end
 
 endtask
