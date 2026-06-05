@@ -1,5 +1,5 @@
 module nx1_mux #(
-    parameter select = 4,
+    parameter select = 3,
     parameter n = 2 ** select
 )(
     input [n-1:0] i,

@@ -1,5 +1,5 @@
-module onexn_mux #(
-    parameter select = 4,
+module onexn_demux #(
+    parameter select = 3,
     parameter out = 2 ** select
 )(
     input i,
@@ -7,6 +7,8 @@ module onexn_mux #(
     output reg [out-1:0] y
 );
 
-
+always @(*) begin
+    y[s] = i;
+end
 
 endmodule

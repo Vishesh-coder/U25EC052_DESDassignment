@@ -1,14 +1,14 @@
-module nx1_mux_tb;
+module onexn_demux_tb;
 parameter select = 3;
-parameter n = 2 ** select;
+parameter out = 2 ** select;
 
-reg [n-1:0] i;
+reg i;
 reg [select-1:0] s;
-wire y;
+wire [out-1:0] y;
 
-nx1_mux #(
+onexn_demux #(
     .select(select),
-    .n(n)
+    .out(out)
 ) uut (
     .i(i),
     .s(s),
@@ -16,13 +16,13 @@ nx1_mux #(
 );
 
 initial begin
-    i = 8'b00000000; s = 3'b000;
-    #10 i = 8'b10010110;
-    #10 s = 3'b001;
+    i = 1'b0; s = 3'b000;
+    #10 i = 1'b1;
+    #10 s = 3'b010;
     #10 s = 3'b101;
-    #10 s = 3'b011;
     #10 s = 3'b110;
     #10 s = 3'b111;
+    #10 i = 1'b0;
 
     #10 $finish;
 end
