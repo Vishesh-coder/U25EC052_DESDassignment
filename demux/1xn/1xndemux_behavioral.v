@@ -8,6 +8,7 @@ module onexn_demux #(
 );
 
 always @(*) begin
+    y = 0;
     y[s] = i;
 end
 

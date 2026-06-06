@@ -10,7 +10,8 @@ threexeightdecoder uut(
 );
 
 initial begin
-    i = 3'b000; en =1'b1;
+    i = 3'b000; en = 1'b0;
+    #10 en = 1'b1;
     #10 i = 3'b001;
     #10 i = 3'b010;
     #10 i = 3'b011;

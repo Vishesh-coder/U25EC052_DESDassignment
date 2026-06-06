@@ -10,7 +10,8 @@ twoxfourdecoder uut(
 );
 
 initial begin
-    i = 2'b00; en =1'b1;
+    i = 2'b00; en = 1'b0;
+    #10 en = 1'b1;
     #10 i = 2'b01;
     #10 i = 2'b10;
     #10 i = 2'b11;

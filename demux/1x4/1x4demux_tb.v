@@ -10,16 +10,16 @@ onexfour_demux uut(
 );
 
 initial begin
-    s = 1'b00; i = 1'b0;
+    s = 2'b00; i = 1'b0;
     #10 i = 1'b1;
 
-    #10 s = 1'b01; i = 1'b0;
+    #10 s = 2'b01; i = 1'b0;
     #10 i = 1'b1;
 
-    #10 s = 1'b10; i = 1'b0;
+    #10 s = 2'b10; i = 1'b0;
     #10 i = 1'b1;
 
-    #10 s = 1'b11; i = 1'b0;
+    #10 s = 2'b11; i = 1'b0;
     #10 i = 1'b1;
 
     #20 $finish;
