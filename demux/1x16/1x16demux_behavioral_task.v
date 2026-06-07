@@ -10,6 +10,7 @@ task demux;
     output reg [15:0] out;
 
     begin
+        out = 0;
         out[select] = inp;
     end
 
