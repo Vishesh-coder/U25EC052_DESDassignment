@@ -12,9 +12,12 @@ initial begin
     #10 b = 4'b0011;
     #10 b = 4'b1001;
     #10 b = 4'b0110;
+    #10 b = 4'b1110;
+    #10 b = 4'b0111;
     #10 b = 4'b1010;
+    #10 b = 4'b1111;
 
-    #20 $finish;
+    #10 $finish;
 end
 
 endmodule

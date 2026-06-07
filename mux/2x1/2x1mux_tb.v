@@ -11,15 +11,15 @@ twoxone_mux uut(
 
 initial begin
     s = 1'b0; i = 1'b00;
-    #10 i = 1'b01;
-    #10 i = 1'b10;
-    #10 i = 1'b11;
-    #10 s = 1'b1; i = 1'b00;
-    #10 i = 1'b01;
-    #10 i = 1'b10;
-    #10 i = 1'b11;
+    #10 i = 2'b01;
+    #10 i = 2'b10;
+    #10 i = 2'b11;
+    #10 s = 1'b1; i = 2'b00;
+    #10 i = 2'b01;
+    #10 i = 2'b10;
+    #10 i = 2'b11;
 
-    #20 $finish;
+    #10 $finish;
 end
 
 endmodule
