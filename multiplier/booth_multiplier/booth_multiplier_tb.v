@@ -1,9 +1,13 @@
 module booth_mul_tb();
-reg signed [3:0] a;
-reg signed [3:0] b;
-wire signed [7:0] y;
+parameter n = 8;
 
-booth_mul uut(
+reg signed [n-1:0] a;
+reg signed [n-1:0] b;
+wire signed [2*n-1:0] y;
+
+booth_mul #(
+    .n(n)
+) uut(
     .a(a),
     .b(b),
     .y(y)
@@ -11,13 +15,14 @@ booth_mul uut(
 
 initial begin
 
-    a = 4'sd0; b = 4'sd0;
-    #10 a = 4'sd4; b = 4'sd2;
-    #10 a = -4'sd3; b = 4'sd7;
-    #10 a = 4'sd5; b = 4'sd6;
-    #10 a = -4'sd4; b = -4'sd5;
-    #10 a = -4'sd7; b = 4'sd8;
-    #10 a = -4'sd8; b = -4'sd9;
+    a = 8'sd0; b = 8'sd0;
+    #10 a = 8'sd25; b = 8'sd45;
+    #10 a = -8'sd13; b = 8'sd70;
+    #10 a = 8'sd54; b = 8'sd63;
+    #10 a = -8'sd4; b = -8'sd9;
+    #10 a = 8'sd127; b = 8'sd100;
+    #10 a = -8'sd127; b = 8'sd80;
+    #10 a = -8'sd260; b = -8'sd40;
 
     #20 $finish;
 end

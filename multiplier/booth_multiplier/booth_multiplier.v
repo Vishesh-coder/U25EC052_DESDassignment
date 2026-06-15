@@ -1,26 +1,28 @@
-module booth_mul(
-    input signed [3:0] a, b,
-    output reg signed [7:0] y
+module booth_mul #(
+    parameter n = 8
+)(
+    input signed [n-1:0] a, b,
+    output reg signed [2*n-1:0] y
 );
 
-reg signed [3:0] A, Q, M;
+reg signed [n-1:0] A, Q, M;
 reg Q_1;
 integer i;
 
 always @(*) begin
     Q = a;
     M = b;
-    A = 4'b0000;
+    A = 0;
     Q_1 = 1'b0;
 
-    for (i = 0; i < 4; i = i + 1) begin
+    for (i = 0; i < n; i = i + 1) begin
         case({Q[0], Q_1})
             2'b01: A = A + M;
             2'b10: A = A - M;
             default: A = A;
         endcase
 
-        {A, Q, Q_1} = {A[3], A[3:1], A[0], Q[3:1], Q[0]};
+        {A, Q, Q_1} = $signed({A, Q, Q_1}) >>> 1;
 
     end
 
