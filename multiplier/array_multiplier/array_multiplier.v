@@ -3,18 +3,19 @@ module array_mul(
     output [7:0] y
 );
 
-reg p[4][4];
+wire [3:0] p [0:3];
 wire [5:0] s;
 wire [10:0] c;
 
 genvar g;
 
+genvar i, j;
+
 generate
-    for(g = 0; g<4; g++) begin
-        and a0(p[g][0], a[g], b[0]);
-        and a1(p[g][1], a[g], b[1]);
-        and a2(p[g][2], a[g], b[2]);
-        and a3(p[g][3], a[g], b[3]);
+    for (i = 0; i < 4; i = i + 1) begin
+        for (j = 0; j < 4; j = j + 1) begin
+            assign p[i][j] = a[i] & b[j];
+        end
     end
 endgenerate
 
