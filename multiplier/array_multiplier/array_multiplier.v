@@ -7,8 +7,6 @@ wire [3:0] p [0:3];
 wire [5:0] s;
 wire [10:0] c;
 
-genvar g;
-
 genvar i, j;
 
 generate
