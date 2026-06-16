@@ -1,11 +1,11 @@
-module carry_adder_tb();
+module ripple_carry_adder_tb();
 reg [3:0] a;
 reg [3:0] b;
 reg cin;
 wire [3:0] sum;
 wire cout;
 
-carry_adder uut(
+ripple_carry_adder uut(
     .a(a),
     .b(b),
     .cin(cin),

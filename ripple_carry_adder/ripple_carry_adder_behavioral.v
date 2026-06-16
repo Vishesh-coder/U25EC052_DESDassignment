@@ -1,4 +1,4 @@
-module carry_adder(
+module ripple_carry_adder(
     input [3:0] a,
     input [3:0] b,
     input cin,
