@@ -7,9 +7,9 @@ module carry_look_ahead #(
     output cout
 );
 
+wire [n:0] c;
 wire [n-1:0] p;
 wire [n-1:0] g;
-wire [n:0] c;
 
 assign c[0] = cin;
 assign p = a ^ b;
