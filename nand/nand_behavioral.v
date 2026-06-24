@@ -4,7 +4,7 @@ module nand_gate(
 );
 
 always @(*) begin
-    y = a ~& b;
+    y = ~(a & b);
 end
 
 endmodule
