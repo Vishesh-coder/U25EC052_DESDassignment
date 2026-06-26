@@ -5,7 +5,7 @@ module bcd_counter(
 
 wire rst;
 
-assign rst = ~(q[3] & q[1]) & ~clear;
+assign rst = ~(q[3] & q[1] & ~q[2] & ~q[0]) & ~clear;
 
 t_ff t0(
     .t(1'b1),
